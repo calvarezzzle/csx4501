@@ -1,0 +1,259 @@
+# NEW SET OF QUESTIONS
+
+# Do at least three mathematical calculations with `+`, `-`, `*`, `/`, and/or `%`.
+
+math = 2+3
+print(math)
+
+math2 = 28/7
+print(math2)
+
+math3 = 4*9
+print(math3)
+
+
+# NEW SET OF QUESTIONS
+
+# Assign a number to the variable `a`,
+# do a mathematical calculation to determine whether a is odd or even,
+# and print out either "a is even" or "a is odd" as appropriate.
+
+a = 124
+math4 = a/2
+if (math4 % 2) == 0:
+    print('this new number is even')
+else:
+    print('this new number is odd')
+
+
+# NEW SET OF QUESTIONS
+
+# Using the given list,
+# 1. print the list
+# 2. print the 0th element
+# 3. print the 5th element
+# 4. print the last element
+# 5. print the length
+#        look at https://python.readthedocs.io/en/stable/library/functions.html
+#        specifically `len()`
+# 6. print all the elements
+# 7. print all the elements less than 8
+# 8. print out the elements in reverse order
+#        look at https://python-reference.readthedocs.io/en/latest/docs/list/
+#        specifically `reverse`
+# 9. append the next fibonacci number and print out the new list
+#        look again at the docs, this time for `append`
+#        [elements in the fibonacci sequence are equal to the sum of the previous two elements]
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+print(a)        #1
+print(a[0])     #2
+print(a[5])     #3
+print(a[-1])    #4
+print(len(a))   #5
+print(a)        #6
+for x in a:     #7
+    if x <8:
+        print x
+a.reverse()     #8
+print(a)
+
+
+# NEW SET OF QUESTIONS
+
+# Using the below lists
+# 1. print out all the elements that are contained in both lists
+# 2. print out the elements that are contained in either list a or list b but not both
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+c = list(set(a).intersection(b)) #1
+print(c)
+
+d = list(set(a).symmetric_difference(b)) #2
+print(d)
+
+
+# NEW SET OF QUESTIONS
+
+# Using the below dictionary
+# add a new item to the dictionary,
+# print an element from the dictionary,
+# print out the message "<key> has <value> letters" for every <key>/<value> pair
+
+a = {
+      'January': 7
+    , 'February': 8
+    , 'March': 5
+    , 'April': 5
+}
+a['May'] = 3
+print(a['January'])
+for  key in a:
+    print key + ' has ' + str(a[key]) + ' letters'
+
+
+# NEW SET OF QUESTIONS
+
+# Write a function that takes as input a list of numbers
+# and prints a new list of only the first and last elements of the given list.
+# Execute it with several examples.
+
+n = []
+n = input('Write a list of numbers: ')
+print(n[0], n[-1])
+
+
+# NEW SET OF QUESTIONS
+
+# Write a function that takes a string as input
+# and prints out "Yes" or "No" depending on whether the
+# string is a palindrome (spelled the same forwards and backwards).
+# Execute it with several examples.
+
+words = input('What are the words? ')
+def pali(words):
+    words = words.lower(.replace(' ', ''))
+    return words == words[::-1]:
+    if words:
+        print('this is a palindrome')
+    else:
+        print('this is not a palindrome')
+
+
+# NEW SET OF QUESTIONS
+
+# Write a function that sets a random seed and prints three random numbers between 0 and 1
+# You may find it useful to look up:
+# random.seed and random.random
+
+import random
+random.seed(0)
+print(random.random())
+print(random.random())
+print(random.random())
+
+
+# NEW SET OF QUESTIONS
+
+# Write a function that takes an integer as input
+# and prints a random alphabetical character, alphabetical string,
+# and alphabetical string of a fixed length equal to the input integer.
+# You may find it useful to look up:
+# string.ascii_letters, random.randint, random.choice
+
+integer = input('What is the number? ')
+int = int(integer)
+
+import random
+import string
+letters = random.choice(string.ascii_letters)
+print(letters)
+word = string.ascii_letters
+print ( ''.join(random.choice(word) for i in range(int)) )
+
+
+# NEW SET OF QUESTIONS
+
+# Print the words in the following sentence that are longer than 6 characters
+# Note: you may find it useful to look at
+# `split` in https://python-reference.readthedocs.io/en/latest/docs/str/
+
+ml_sentence = "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T as measured by P improves with experience E."
+
+def string_check(str_len, ml_sentence):
+    result = []
+    words = ml_sentence.split(" ")
+    for x in words:
+        if len(x) > str_len:
+            result.append(x)
+    return result
+str_len = 6
+ml_sentence = "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T as measured by P improves with experience E."
+
+print('Words greater than 6 are below: ')
+print(string_check(str_len, ml_sentence))
+
+
+# NEW SET OF QUESTIONS
+
+# Print 5 random words from following sentence:
+
+ml_sentence = '''
+A computer program is said to learn
+from experience E with respect to some class of tasks T
+and performance measure P if its performance at tasks in T
+as measured by P improves with experience E.
+'''
+
+import random
+
+rand = ml_sentence.split()
+
+print(random.choice(rand))
+print(random.choice(rand))
+print(random.choice(rand))
+print(random.choice(rand))
+print(random.choice(rand))
+
+
+# NEW SET OF QUESTIONS
+
+# Using the above 'ml_sentence', make a dictionary with
+# the dictionary keys equal to the unique words in the sentence,
+# and the value for each key equal to the number of times each word occurs.
+# e.g. 'hello my hello friend' would lead to the dictionary {'hello': 2, 'my': 1, 'friend': 1}
+
+ml_sentence = '''
+A computer program is said to learn
+from experience E with respect to some class of tasks T
+and performance measure P if its performance at tasks in T
+as measured by P improves with experience E.
+'''
+
+words = ml_sentence.split()
+d = {}
+for x in words:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+
+for key in list(d.keys()):
+    print(key, d[key])
+
+
+#  NEW SET OF QUESTIONS
+
+# Time to roll up our sleeves and make a similar dictionary for all the words in Macbeth.
+# I am going to do the first part (and you can execute this cell as is to see what happens),
+# you just need to adapt your code from above to make the dictionary at the end
+
+# Here we import libraries that can grab data from the web (via requests) and form a list of words using NLTK.
+import requests
+from nltk.tokenize import word_tokenize
+
+# Here we get the text of Macbeth from Project Gutenberg (https://www.gutenberg.org/)
+# and "tokenize" the text (split it up into words)
+target_url = "https://www.gutenberg.org/files/1533/1533-0.txt"
+response = requests.get(target_url)
+text_string = response.text
+text_string = text_string.lower()
+text_words = word_tokenize(text_string)
+
+# Here we print the first 10 words
+print(text_words[0:10])
+
+# Put in your code here to make the dictionary with the <word> : <word counts> pairs
+
+
+# Check out some entries in the dictionary (such as 'Macbeth', 'sword', 'thy')
+
+
+import pip
+installed_packages = pip.get_installed_distributions()
+installed_packages_list = sorted(["%s==%s" % (i.key, i.version)
+     for i in installed_packages])
+print(installed_packages_list)
